@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyril's weather app</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/ca71dbf907.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      id="search-js"
+      defer=""
+      src="https://api.mapbox.com/search-js/v1.5.0/web.js"
+    ></script>
+  </head>
+  <body>
+    <section class="app">
+      <div class="search">
+        <div class="searchInput">
+          <input
+            class="input"
+            id="input"
+            placeholder="enter city name"
+            name="city"
+            autocomplete="shipping address-level2"
+            placeholder="City"
+          />
+          <ul id="suggestions"></ul>
+        </div>
+
+        <button class="searchLogo"><img src="images/search.png"</button>
+      </div>
+      <div class="sky-weather">
+        <img src="images/clear.png" class="sky" />
+      </div>
+      <div class="temp">-3°C</div>
+      <div class="city">Brussels</div>
+      <div class="country">Belgium</div>
+      <div class="perturbation">
+        <div class="perturbClass">
+          <i class="fa-solid fa-droplet"></i>
+          <div class="humidityTexts">
+            <div class="humidityTaux">50%</div>
+            <span>Humidity</span>
+          </div>
+        </div>
+        <div class="perturbClass">
+          <i class="fa-solid fa-wind"></i>
+          <div class="windTexts">
+            <div class="windTaux">15km/h</div>
+            <span>Wind Speed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

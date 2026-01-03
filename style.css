@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e0e0e0;
+  background: radial-gradient(
+    circle,
+    rgba(224, 224, 224, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.app {
+  background-color: rgb(244, 244, 244);
+  width: 600px;
+  height: 700px;
+  margin: 10px;
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.search {
+  display: flex;
+  margin-top: 40px;
+  gap: 20px;
+  width: 90%;
+
+  align-items: center;
+}
+
+.search input {
+  border-radius: 30px;
+  height: 50px;
+  width: 80%;
+  outline: none;
+  border: 0;
+  padding-left: 20px;
+  background-color: rgb(210, 210, 210);
+}
+
+.searchLogo {
+  border-radius: 100px;
+  outline: none;
+  border: 0;
+  background-color: rgb(210, 210, 210);
+  cursor: pointer;
+}
+.searchLogo img {
+  width: 10px;
+  padding: 18px;
+}
+.searchInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.sky-weather {
+  width: 80%;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.sky {
+  width: 35%;
+}
+
+.temp,
+.city {
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 30px;
+  line-height: 30px;
+}
+
+.perturbation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 100px;
+  font-size: 20px;
+}
+
+.perturbClass {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.fa-solid {
+  font-size: 30px;
+}
+
+.humidityTaux,
+.windTaux {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#suggestions {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  font-size: 14px;
+  width: 80%;
+  border-radius: 30px;
+  padding-left: 20px;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  top: 100%;
+}
+
+#suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+.country {
+  margin-top: 20px;
+}
+
+@media (min-width: 1025px) {
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e0e0e0;
+    background: radial-gradient(
+      circle,
+      rgba(224, 224, 224, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+}
+
+@media (max-width: 481px) {
+  .app {
+    width: 400px;
+    margin: 10px;
+    height: 600px;
+  }
+
+  .perturbClass {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  .app {
+    width: 400px;
+    margin: 10px;
+  }
+
+  .perturbClass,
+  .humidityTaux,
+  .windTaux {
+    font-size: 14px;
+  }
+
+  .fa-solid {
+    font-size: 20px;
+  }
+}
