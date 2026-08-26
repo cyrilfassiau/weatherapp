@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 
-/**
- * State mirrored into localStorage. Reads lazily on mount and tolerates
- * private-mode / quota failures by falling back to in-memory state.
- */
+
 export function useLocalStorage(key, initialValue) {
   const [value, setValue] = useState(() => {
     try {

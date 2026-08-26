@@ -4,10 +4,7 @@ import { formatShortHour } from '../lib/time.js';
 import { formatPercent, formatTemp } from '../lib/units.js';
 import { DropletIcon } from './Icons.jsx';
 
-/**
- * The next 24 hours at the 3-hour resolution the free forecast provides.
- * Deliberately not interpolated to per-hour — the subtitle says so.
- */
+
 export function HourlyStrip({ slots, timezone }) {
   const { tempUnit, lang, t } = useSettings();
   if (!slots.length) return null;

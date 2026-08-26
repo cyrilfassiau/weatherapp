@@ -2,10 +2,7 @@ import { useCallback, useState } from 'react';
 import { reverseGeocode } from '../api/openweather.js';
 import { normalizePlace } from '../lib/normalize.js';
 
-/**
- * Browser geolocation, resolved to a named place via reverse geocoding so the
- * UI can show "Brussels" rather than a pair of coordinates.
- */
+
 export function useGeolocation(onResolved) {
   const [locating, setLocating] = useState(false);
   const [error, setError] = useState(null);

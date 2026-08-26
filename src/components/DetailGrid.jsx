@@ -39,17 +39,16 @@ function Tile({ icon, label, value, sub, children }) {
   );
 }
 
-/** Every field the free tier actually returns, one tile each. */
 export function DetailGrid({ current, slot }) {
   const { tempUnit, windUnit, t } = useSettings();
 
   const speed = windSpeed(current.windSpeed, windUnit);
-  // Gusts only when the current reading itself carries one; borrowing a
-  // forecast slot's gust can pair 14 mph with a 10 mph "gust".
+  
+  
   const gust = current.windGust;
   const descriptor = windDescriptor(current.windSpeed);
   const direction = windDirection(current.windDeg);
-  // Compare in the active unit so the delta matches the numbers beside it.
+  
   const feelsDelta = temp(current.feelsLike, tempUnit) - temp(current.temp, tempUnit);
   const dewPoint = slot?.dewPoint;
 

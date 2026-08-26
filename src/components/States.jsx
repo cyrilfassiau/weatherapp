@@ -2,7 +2,7 @@ import { useSettings } from '../hooks/settingsContext.js';
 import { errorKeyFor } from '../lib/i18n.js';
 import { AlertIcon, RefreshIcon, SearchIcon } from './Icons.jsx';
 
-/** Skeleton mirrors the loaded layout's dimensions, so nothing shifts on arrival. */
+
 export function WeatherSkeleton() {
   const { t } = useSettings();
 

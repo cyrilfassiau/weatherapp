@@ -7,8 +7,8 @@ import { StarIcon } from './Icons.jsx';
 export function CurrentWeather({ place, current, day, saved, onToggleSave }) {
   const { tempUnit, lang, t } = useSettings();
   const tz = current.timezone;
-  // Late in the day only a slot or two remain, so the "high" and "low" collapse
-  // onto the current temperature. Better to omit them than to state 87°/87°.
+  
+  
   const showRange = day && day.slots.length >= 4;
 
   return (

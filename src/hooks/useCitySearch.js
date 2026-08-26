@@ -14,8 +14,8 @@ export function useCitySearch(query) {
   const debounced = useDebouncedValue(query.trim(), 300);
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
-  // Surfaced so a rejected key reads as a key problem rather than as
-  // "no cities match", which sends you chasing the wrong bug.
+  
+  
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function useCitySearch(query) {
     geocode(debounced, { signal: controller.signal })
       .then((matches) => {
         if (controller.signal.aborted) return;
-        // The geocoder can return the same city twice with different casing.
+        
         const seen = new Set();
         const unique = matches.map(normalizePlace).filter((place) => {
           if (seen.has(place.id)) return false;

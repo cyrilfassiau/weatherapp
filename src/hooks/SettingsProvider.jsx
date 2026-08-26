@@ -4,20 +4,18 @@ import { useLocalStorage } from './useLocalStorage.js';
 import { translator } from '../lib/i18n.js';
 
 const DEFAULTS = {
-  tempUnit: 'c', // 'c' | 'f'
-  windUnit: 'kmh', // 'kmh' | 'mph'
-  theme: 'system', // 'system' | 'light' | 'dark'
-  lang: 'en', // 'en' | 'fr'
+  tempUnit: 'c', 
+  windUnit: 'kmh', 
+  theme: 'system', 
+  lang: 'en', 
 };
 
 export function SettingsProvider({ children }) {
-  // Key matches the pre-paint theme script in index.html.
+  
   const [settings, setSettings] = useLocalStorage('skycast:settings', DEFAULTS);
 
   const merged = useMemo(() => ({ ...DEFAULTS, ...settings }), [settings]);
 
-  // Track the OS preference; App combines it with the city's day/night to
-  // decide the actual theme, so the sky and the UI never disagree.
   const [prefersDark, setPrefersDark] = useState(
     () => window.matchMedia('(prefers-color-scheme: dark)').matches,
   );
@@ -39,8 +37,8 @@ export function SettingsProvider({ children }) {
       ...merged,
       prefersDark,
       set: update,
-      // Flipping temperature flips wind and pressure with it — °F alongside km/h
-      // is a combination no one actually wants.
+      
+      
       toggleUnits: () =>
         update(
           merged.tempUnit === 'c'

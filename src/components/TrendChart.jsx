@@ -3,11 +3,7 @@ import { useSettings } from '../hooks/settingsContext.js';
 import { formatShortHour } from '../lib/time.js';
 import { temp, tempUnitLabel } from '../lib/units.js';
 
-/**
- * Hand-rolled SVG rather than a charting library: a temperature line with a
- * gradient fill, and precipitation-probability bars sharing its x-axis.
- * Roughly 150 lines against ~500 KB for Recharts, and it inherits the theme.
- */
+
 
 const W = 720;
 const H = 260;

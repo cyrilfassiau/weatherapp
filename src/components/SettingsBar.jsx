@@ -2,7 +2,7 @@ import { useSettings } from '../hooks/settingsContext.js';
 import { LANGUAGES } from '../lib/i18n.js';
 import { MonitorIcon, MoonIcon, SunIcon } from './Icons.jsx';
 
-/** A segmented control. Radio semantics, so arrow keys work as expected. */
+
 function Segmented({ label, value, options, onChange }) {
   return (
     <div role="radiogroup" aria-label={label} className="surface flex items-center gap-0.5 rounded-full p-1">

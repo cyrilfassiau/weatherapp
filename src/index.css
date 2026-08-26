@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
-/* Tailwind v4 defaults dark: to prefers-color-scheme. The app instead toggles a
-   .dark class on <html>, so the manual theme switch wins in both directions. */
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -12,8 +11,7 @@
 }
 
 :root {
-  /* Surfaces sit on top of the condition gradient, so they are translucent
-     rather than opaque — the sky reads through them. */
+ 
   --surface: rgb(255 255 255 / 0.62);
   --surface-strong: rgb(255 255 255 / 0.82);
   --surface-border: rgb(255 255 255 / 0.55);
@@ -21,8 +19,7 @@
   --text-secondary: rgb(13 22 38 / 0.66);
   --text-faint: rgb(13 22 38 / 0.44);
   --shadow-card: 0 24px 60px -20px rgb(9 18 38 / 0.35);
-  /* The chart's area fill is currentColor; near-black at 30% reads as a grey
-     smudge in light mode, while white at 30% looks right in dark mode. */
+ 
   --chart-fill: 0.13;
   color-scheme: light;
 }
@@ -57,7 +54,7 @@
     background-color: var(--color-ink);
   }
 
-  /* One visible focus treatment everywhere, keyboard-only. */
+ 
   :focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
@@ -71,7 +68,7 @@
 }
 
 @layer components {
-  /* Shown until a city loads, when there is no condition to reflect yet. */
+ 
   .sky-default {
     background: linear-gradient(160deg, #cfd9e3 0%, #e8eef4 55%, #f6f9fc 100%);
   }
@@ -96,7 +93,7 @@
     color: var(--text-faint);
   }
 
-  /* Horizontal scrollers keep their scroll ability but lose the visible bar. */
+ 
   .scroll-x {
     overflow-x: auto;
     scroll-snap-type: x proximity;
@@ -114,7 +111,7 @@
   }
 }
 
-/* The loading shimmer, and the entrance animations for freshly loaded data. */
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
@@ -164,7 +161,7 @@
   animation: draw 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Anyone who has asked the OS to reduce motion gets the end state immediately. */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

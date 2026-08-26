@@ -5,10 +5,7 @@ import { formatShortHour, formatWeekday } from '../lib/time.js';
 import { formatPercent, formatTemp, temp } from '../lib/units.js';
 import { ChevronIcon, DropletIcon } from './Icons.jsx';
 
-/**
- * A bar spanning each day's min–max, positioned within the whole week's range,
- * so a cold day reads as short and left-shifted at a glance.
- */
+
 function RangeBar({ day, weekMin, weekMax, unit }) {
   const span = weekMax - weekMin || 1;
   const left = ((temp(day.min, unit) - weekMin) / span) * 100;

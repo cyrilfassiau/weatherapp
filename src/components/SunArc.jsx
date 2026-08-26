@@ -7,7 +7,7 @@ const H = 120;
 const PAD = 26;
 const BASE = H - 22;
 
-/** Semicircular arc from sunrise to sunset, with the sun placed at `now`. */
+
 function arcPoint(progress) {
   const clamped = Math.min(1, Math.max(0, progress));
   const angle = Math.PI * (1 - clamped);

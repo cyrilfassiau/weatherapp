@@ -1,9 +1,5 @@
 const API_KEY = import.meta.env.VITE_OWM_API_KEY;
 
-/**
- * Error kinds the UI knows how to render distinctly. Anything unexpected
- * collapses to 'unknown' so the error state never renders a raw stack trace.
- */
 export const ErrorKind = {
   MISSING_KEY: 'missing-key',
   BAD_KEY: 'bad-key',
@@ -21,13 +17,9 @@ export class WeatherError extends Error {
   }
 }
 
-/** True for the AbortError thrown when a superseded request is cancelled. */
 export const isAbort = (err) => err?.name === 'AbortError';
 
-/**
- * Fetch an OpenWeatherMap endpoint with the key injected and errors normalized.
- * `signal` lets callers cancel superseded requests (every keystroke, in practice).
- */
+
 export async function owmFetch(path, params = {}, { signal } = {}) {
   if (!API_KEY) {
     throw new WeatherError(

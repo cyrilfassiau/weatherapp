@@ -3,11 +3,7 @@ import { getCurrent, getForecast } from '../api/openweather.js';
 import { isAbort, ErrorKind } from '../api/client.js';
 import { normalizeCurrent, normalizeForecast, placeId } from '../lib/normalize.js';
 
-/**
- * The free tier allows 60 calls a minute. Responses are memoised per place and
- * language for ten minutes, which keeps switching between saved cities instant
- * and well clear of the limit — weather data does not change faster than that.
- */
+
 const TTL_MS = 10 * 60 * 1000;
 const cache = new Map();
 

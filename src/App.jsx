@@ -20,7 +20,7 @@ import { formatHour } from './lib/time.js';
 export default function App() {
   const { lang, theme, prefersDark, t } = useSettings();
 
-  // The last viewed city and the saved list both survive a reload.
+  
   const [place, setPlace] = useLocalStorage('skycast:place', null);
   const [savedCities, setSavedCities] = useLocalStorage('skycast:saved', []);
 
@@ -51,8 +51,8 @@ export default function App() {
   const current = data?.current;
   const forecast = data?.forecast;
 
-  // One decision drives both the sky variant and the UI theme, so a "light"
-  // page never ends up wearing dark cards.
+  
+  
   const night = resolveNight(theme, current?.isDay ?? null, prefersDark);
   const background = current ? skyGradient(current.conditionId, !night) : undefined;
 
@@ -67,7 +67,7 @@ export default function App() {
   }, [night]);
 
   const hourly = useMemo(() => (forecast ? upcomingSlots(forecast.slots, 8) : []), [forecast]);
-  // 16 three-hour buckets = the next 48 hours.
+  
   const trend = useMemo(() => (forecast ? upcomingSlots(forecast.slots, 16) : []), [forecast]);
   const today = forecast?.days?.[0] ?? null;
 

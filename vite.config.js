@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  // Deploying to a GitHub Pages *project* site? Set base: '/weatherapp/'.
-  // Netlify / Vercel / any root-domain host needs no base.
+  
+  
   plugins: [
     react(),
     tailwindcss(),
@@ -28,7 +28,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,png,svg,woff2}'],
         runtimeCaching: [
           {
-            // Weather data: show the cached copy instantly, refresh in the background.
+            
             urlPattern: /^https:\/\/api\.openweathermap\.org\/.*/i,
             handler: 'StaleWhileRevalidate',
             options: {

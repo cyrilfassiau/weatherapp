@@ -1,7 +1,4 @@
-/**
- * Inline SVG icons, replacing the FontAwesome kit script the old app loaded
- * from a CDN. Each inherits currentColor and sizes from the parent font size.
- */
+
 const base = {
   width: '1em',
   height: '1em',

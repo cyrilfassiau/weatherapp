@@ -1,7 +1,7 @@
 import { useSettings } from '../hooks/settingsContext.js';
 import { CloseIcon } from './Icons.jsx';
 
-/** Pinned cities. Selecting one is a cache hit, so switching is instant. */
+
 export function SavedCities({ cities, activeId, onSelect, onRemove }) {
   const { t } = useSettings();
   if (!cities.length) return null;

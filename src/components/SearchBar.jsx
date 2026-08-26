@@ -4,11 +4,7 @@ import { useSettings } from '../hooks/settingsContext.js';
 import { errorKeyFor } from '../lib/i18n.js';
 import { CrosshairIcon, SearchIcon } from './Icons.jsx';
 
-/**
- * An ARIA combobox, not a bare input with a list underneath: arrow keys move
- * through suggestions, Enter selects, Escape closes, and screen readers are
- * told which option is active.
- */
+
 export function SearchBar({ onSelect, onLocate, locating }) {
   const { t } = useSettings();
   const [query, setQuery] = useState('');
